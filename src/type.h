@@ -1,6 +1,9 @@
 #ifndef _TYPE_H
 #define _TYPE_H
 
+#define TYPE_VER_MAX 1
+#define TYPE_VER_MIN 0
+
 // typedefs for stdint.h types that are shorter
 
 #include <stdint.h>
