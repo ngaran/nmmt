@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=
+CFLAGS=-Wall -Wextra
 LDFLAGS=
 SRC=src/test.c
 
