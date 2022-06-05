@@ -1,18 +1,24 @@
 CC=gcc
-CFLAGS=-Wall -Wextra
-LDFLAGS=
-SRC=src/test.c
+CFLAGS=# -Wall -Wextra
+LDFLAGS=-lz
+SRC=src/test.c src/type.h src/save.h src/save.c
 
-all: *.o test
+all: *.o nmmt
 
 *.o: $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -c
 
-test: *.o
-	$(CC) $(LDFLAGS) *.o -o test
+nmmt: *.o
+	$(CC) $(LDFLAGS) *.o -o nmmt
+
+install: nmmt
+	cp nmmt /usr/bin
+
+uninstall: /usr/bin/nmmt
+	rm nmmt /usr/bin
 
 clean:
-	rm -f *.o test
+	rm -f *.o nmmt
 
 .PHONY: all clean
 
